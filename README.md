@@ -17,8 +17,14 @@ Using Kirill Osenkovs [MSBuild Structured Log Viewer][analysis-tool].
 In the build of `ConsoleApplication6`, MSBuild realizes it needs `ClassLibrary0`. However, for whatever reasons it cannot find the reference:
 ![References overview][analysis1]
 
-A partial explanation might be this message when building `ClassLibrary2`.
+A partial insight is given by this message when building `ClassLibrary2`.
 ![References overview][analysis2]
+
+We now understand and accept that `ClassLibrary0` won't be copied to `ClassLibarary2`.
+
+Note that this means that the `Private` flag is actually [tri-state][quotegravell], which can be quite a surprise for Visual Studio users acustomed to the boolean `Copy Local` property.
+
+However, this doesn't explain why `ClassLibrary0` is not copied to `ConsoleApplication6`, since there is a complete chain of project references having `Private` set to `True` straight from `ConsoleApplication6` to `ClassLibrary0`.
 
 # Resolution
 From the analysis, it's quite easy to fix the issue:
@@ -28,3 +34,4 @@ Set `Private = True` for the project reference from `ClassLibrary2` to `ClassLib
 [analysis-tool]: https://github.com/KirillOsenkov/MSBuildStructuredLog
 [analysis1]: media/build-analysis-1.png "Build analysis 1"
 [analysis2]: media/build-analysis-2.png "Build analysis 2"
+[quotegravell]: http://stackoverflow.com/questions/14923804/assembly-being-copied-local-when-it-shouldnt-be#comment20939785_14923854
