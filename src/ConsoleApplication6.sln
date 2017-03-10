@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary3", "ClassLibra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary0", "ClassLibrary0\ClassLibrary0.csproj", "{7863025B-074C-43EA-AF57-3B1F95DB191F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{96FEF0B4-737E-42B4-9428-618BF495758D}"
+	ProjectSection(SolutionItems) = preProject
+		..\media\build-analysis-1.png = ..\media\build-analysis-1.png
+		..\media\build-analysis-2.png = ..\media\build-analysis-2.png
+		..\README.md = ..\README.md
+		..\media\references.png = ..\media\references.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
