@@ -31,9 +31,14 @@ Therefore I opened an [issue on MSBuild][issue].
 From the analysis, it's quite easy to fix the issue:
 Set `Private = True` for the project reference from `ClassLibrary2` to `ClassLibrary1`.
 
+Consider to automatically avoid project references with `Private` undefined:
+- [Define a default for `Private`][reso-1]
+- Author a prebuild action which fails if the project has project references with `Private` undefined.
+
 [refpic]: media/references.png "Referenes overview"
 [analysis-tool]: https://github.com/KirillOsenkov/MSBuildStructuredLog
 [analysis1]: media/build-analysis-1.png "Build analysis 1"
 [analysis2]: media/build-analysis-2.png "Build analysis 2"
 [quotegravell]: http://stackoverflow.com/questions/14923804/assembly-being-copied-local-when-it-shouldnt-be#comment20939785_14923854
-[issue]:https://github.com/Microsoft/msbuild/issues/1845
+[issue]: https://github.com/Microsoft/msbuild/issues/1845
+[reso-1]: http://stackoverflow.com/a/1686086
