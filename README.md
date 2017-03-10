@@ -3,6 +3,7 @@ Demo for an inconvenience with msbuild reference copying
 
 # Overview
 ![References overview][refpic]
+
 Solid lines denote project references with `Private` set to `True`.
 Dashed lines denote project references with `Private` set to `False`.
 Dash-dot lines denote project references with `Private` undefined.
